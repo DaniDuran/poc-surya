@@ -1,0 +1,18 @@
+[project]
+name = "surya-form-poc"
+version = "0.1.0"
+description = "On-premise structured OCR proof of concept using Surya and Litestar."
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "litestar>=2.12.1",
+    "pydantic-settings>=2.0.0",
+    "python-multipart>=0.0.9",
+    "surya-ocr>=0.16.0",
+    "uvicorn>=0.30.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

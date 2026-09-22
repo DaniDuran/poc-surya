@@ -1,0 +1,268 @@
+{
+"typologies": [
+{
+"codTypology": "E3",
+"nameTypology": "Formulario E3",
+"description": "E3",
+"operationalQuestions": false,
+"requiresQualityVerification": false,
+"applyDroolsResponse": false,
+"confidence": 0,
+"questions": [],
+"fields": [
+{
+"name": "TelefonoFijo",
+"type": "string",
+"required": true,
+"description": "TELEFONO FIJO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "TipoDeDiscapacidad",
+"type": "string",
+"required": true,
+"description": "Obtén el valor del campo asociado al titulo "TIPO DE DISCAPACIDAD". si no se encuentra evidencia suficiente devuelve vacío",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "TelefonoMovil",
+"type": "string",
+"required": true,
+"description": "TELEFONO MOVIL",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "CedulaFuncionario",
+"type": "string",
+"required": true,
+"description": "Dentro de la sección INFORMACIÓN DEL FUNCIONARIO RESPONSABLE DE LA INSCRIPCIÓN buscar el campos CÉDULA",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "Departamento",
+"type": "string",
+"required": true,
+"description": "DEPARTAMENTO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "SegundoApellido",
+"type": "string",
+"required": true,
+"description": "SEGUNDO APELLIDO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "CiudadMunicipio",
+"type": "string",
+"required": true,
+"description": "CIUDAD/MUNICIPIO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "FechaExpedicion",
+"type": "string",
+"required": true,
+"description": "FECHA DE EXPEDICION (DÍA, MES, AÑO)",
+"format": "dd-MM-yyyy",
+"pages": [],
+"children": []
+},
+{
+"name": "FechaInscripcion",
+"type": "date",
+"required": true,
+"description": "FECHA DE INSCRIPCION (DÍA, MES, AÑO)",
+"format": "dd-MM-yyyy",
+"pages": [],
+"children": []
+},
+{
+"name": "TipoDocumento",
+"type": "string",
+"required": true,
+"description": "TIPO DE DOCUMENTO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "NumeroDocumento",
+"type": "string",
+"required": true,
+"description": "Extrae el número de identificación del asegurado, tomando únicamente el valor que aparece contiguo al tipo de documento de identidad correspondiente. Elimina puntos, comas, espacios y otros separadores utilizados únicamente para dar formato al número. Conserva los ceros iniciales. Conserva las letras y los guiones (-) cuando formen parte del número o código de identificación. No captures números de afiliación, NIT, radicados, cuentas, códigos u otros valores cercanos. No confundas la identificación del asegurado con la de beneficiarios, familiares, solicitantes o apoderados. Si no existe evidencia suficiente, devuelve cadena vacía.",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "SegundoNombre",
+"type": "string",
+"required": true,
+"description": "SEGUNDO NOMBRE",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "NivelEstudio",
+"type": "string",
+"required": true,
+"description": "NIVEL DE ESTUDIO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "Etnia",
+"type": "string",
+"required": true,
+"description": "ETNIA",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "Crops",
+"type": "array",
+"required": true,
+"description": "\nEste campo NO se obtiene de OCR.\n \nFUENTE:\nLa única fuente de datos para construir este campo es variables.result_crop.process.\n \nCORRELACIÓN:\nPara el documento actual de variables.result_ocr.documentos:\n \n1. Obtén exactamente su propiedad archivo.\n2. Busca en variables.result_crop.process el elemento cuya propiedad archivo sea exactamente igual.\n3. La comparación de archivo debe realizarse por igualdad exacta de string.\n \nSI EXISTE COINCIDENCIA:\nDebes tomar el elemento completo encontrado en variables.result_crop.process.\n \nEl value debe contener la serialización JSON de un arreglo que contenga únicamente ese elemento encontrado.\n \nNo construyas ni interpretes nuevamente las propiedades del elemento.\n \nConserva exactamente:\n- archivo\n- paginas\n- pagina\n- crop\n \nLa propiedad crop es un string que contiene una ruta de archivo.\nDebe copiarse literalmente desde variables.result_crop.process[].paginas[].crop.\n \nEstá prohibido obtener crop desde OCR, polygon, bounding boxes, coordenadas u otra fuente.\n \nEstá prohibido devolver [] cuando exista en variables.result_crop.process un elemento cuyo archivo sea igual al archivo del documento actual.\n \nEstá prohibido reemplazar un crop existente por:\n- ""\n- {}\n- []\n- null\n- coordenadas\n \nSi existe coincidencia:\n- confidence debe ser 1.\n \nSOLAMENTE si no existe ningún elemento en variables.result_crop.process cuyo archivo sea exactamente igual al archivo del documento actual:\n- value debe ser "[]"\n- confidence debe ser 0.",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "NumFormulario",
+"type": "string",
+"required": true,
+"description": "FORMULARIO NO.",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "LeeBraile",
+"type": "string",
+"required": true,
+"description": "LEE BRAILE",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "PrimerNombre",
+"type": "string",
+"required": true,
+"description": "PRIMER NOMBRE",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "Municipio",
+"type": "string",
+"required": true,
+"description": "Obtén el valor del campo asociado al titulo "MUNICIPIO". Non confundas con el campo "CIUDAD/MUNICIPIO". Si no se encuentra evidencia suficiente devuelve vacío",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "NombrePuesto",
+"type": "string",
+"required": true,
+"description": "Obtén el valor del campo asociado al titulo "NOMBRE DEL PUESTO DE VOTACIÓN". si no se encuentra evidencia suficiente devuelve vacío",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "Puesto",
+"type": "string",
+"required": true,
+"description": "Obtén el valor del campo asociado al titulo "PUESTO". si no se encuentra evidencia suficiente devuelve vacío",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "Zona",
+"type": "string",
+"required": true,
+"description": "Obtén el valor del campo asociado al titulo "ZONA". si no se encuentra evidencia suficiente devuelve vacío",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "CorreoElectronico",
+"type": "string",
+"required": true,
+"description": "CORREO ELECTRONICO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "NombreFuncionario",
+"type": "string",
+"required": true,
+"description": "Dentro de la sección INFORMACIÓN DEL FUNCIONARIO RESPONSABLE DE LA INSCRIPCIÓN buscar el campos NOMBRE",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "CodPuesto",
+"type": "string",
+"required": true,
+"description": "COD. PUESTO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "PrimerApellido",
+"type": "string",
+"required": true,
+"description": "PRIMER APELLIDO",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "NovedadHuellas",
+"type": "string",
+"required": true,
+"description": "Existen tres valores que pueden estar marcados con una X: AMPUTACIÓN AMBAS MANOS, ENFERM. MANOS Y/O HUELLAS, MALFORM. EXTREMIDADES; Debes devolver cuales de esos tres estan marcados, si no ecunetras ninguno debes devolver vacío",
+"format": null,
+"pages": [],
+"children": []
+},
+{
+"name": "DireccionResidencia",
+"type": "string",
+"required": true,
+"description": "DIRECCIÓN Y/O LUGAR DE RESIDENCIA",
+"format": null,
+"pages": [],
+"children": []
+}
+]
+}
+]
+}
